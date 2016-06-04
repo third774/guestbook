@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  
+  div.container(ng-controller='guestbookCtrl as gb')
+    h1= title
+    p Sign the guestbook below!
+    
+    form(method='POST' action='/api/entries')
+      div.col-3
+        label Name
+        input(type='text' ng-model="gb.name")
+      div.col-3
+        label Message  
+        input(type='text' ng-model='gb.message')
+      div
+        input(type='button' ng-click='gb.submit()' value='Submit')
+      
+    div.entries
+      div(ng-repeat='entry in gb.entries')
+        h3 {{entry.name}}
+        a(href="#" ng-click='gb.delete(entry)') X
+        p {{entry.message}}
+    
+  script(src="/js/main.js")
+  script(src='/js/controllers/guestbookController.js')
+
+
+
+
+
+
+

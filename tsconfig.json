@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "module": "commonjs",
+        "outDir": "./dist",
+        "watch": true,
+        "target": "es5"
+    },
+    "exclude": [
+        "./dist"
+    ]
+}
